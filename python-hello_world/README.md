@@ -3,3 +3,4 @@
 4-print_float.py prints the float stored in the variable number with a precision of 2 digits
 5-print_string prints 3 times a string stored in the variable str, followed by its first 9 characters
 6-concat.py prints Welcome to Holberton School!
+7-edges.py completes the source code
