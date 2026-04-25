@@ -7,3 +7,4 @@
 6-print_comb3.py prints all possible different combinations of two digits
 7-islower.py function that checks for lowercase character
 8-uppercase.py prints a string in uppercase followed by a new line
+9-print_last_digit.py is a function that prints the last digit of a number
