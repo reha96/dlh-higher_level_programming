@@ -4,3 +4,4 @@ def print_last_digit(number):
     digit = int(string)
     print("{}".format(digit), end="")
     return digit
+    
