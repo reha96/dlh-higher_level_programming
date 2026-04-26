@@ -13,5 +13,6 @@ def main(*argv):
         for i in range(len(argv)):
             print(f"{i+1}: {argv[i]}")
 
+
 if __name__ == "__main__":
     main(*sys.argv[1:])
