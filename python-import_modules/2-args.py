@@ -7,7 +7,7 @@ def main(*argv):
         print("0 arguments.")
     elif len(argv) == 1:
         print("1 argument:")
-        print(f"{len(argv)}: {argv[0]}")     
+        print(f"{len(argv)}: {argv[0]}")
     else:
         print(f"{len(argv)} arguments:")
         for i in range(len(argv)):
