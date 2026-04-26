@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 from calculator_1 import add, sub, mul, div
+import sys
 
 
-def main(a, operator, b):
-    if a is None or operator is None or b is None:
+def main(*argv):
+    if len(argv) != 2:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-    a = int(a)
-    b = int(b)
+    a = int(argv[0])
+    b = int(argv[2])
+    operator = argv[1]
     if operator == "+":
         print("{}".format(a) + "{}".format(operator) + "{} = ".format(b) + "{}".format(add(a, b)))
     elif operator == "-":
@@ -20,4 +22,4 @@ def main(a, operator, b):
 
 
 if __name__ == "__main__":
-    main()
+    main(*sys.argv[1:])
