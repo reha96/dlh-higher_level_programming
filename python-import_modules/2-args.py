@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-def main(argv = None):
+def main(argv):
     if argv == None:
         print("0 arguments.")
     elif len(argv) == 1:
