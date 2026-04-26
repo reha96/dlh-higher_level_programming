@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-import sys
+import hidden_4
 
-
-def main(*argv):
-    for i in range(len(argv)):
-        if argv[i][0] != "_" and argv[i][1] != "_": 
-            print(f"{argv[i]}")
+def main():
+    for i in dir(hidden_4):
+        if i[0] != "_" and i[1] != "_": 
+            print(f"{i}")
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:])
+    main()
