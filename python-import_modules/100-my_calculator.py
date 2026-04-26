@@ -19,6 +19,7 @@ def main(*argv):
         print(f"{a} {operator} {b} = {div(a, b)}")
     else:
         print("Unknown operator. Available operators: +, -, * and /")
+        raise ValueError()
 
 
 if __name__ == "__main__":
