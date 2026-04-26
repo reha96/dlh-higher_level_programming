@@ -4,7 +4,7 @@ from sys import argv
 
 
 def main(*argv):
-    if len(argv) != 2:
+    if len(argv) != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
     a = int(argv[0])
     b = int(argv[2])
