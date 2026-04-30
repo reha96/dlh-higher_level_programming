@@ -3,5 +3,6 @@ def best_score(a_dictionary):
     if a_dictionary is None or len(a_dictionary) < 1:
         return None
     else:
-        out = list(dict(sorted(a_dictionary.items(), key=lambda item: item[1], reverse=True)))[0]
-        return(out)
+        out = list(dict(sorted(a_dictionary.items(),
+                               key=lambda item: item[1], reverse=True)))[0]
+        return out
