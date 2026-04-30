@@ -15,10 +15,11 @@ def roman_to_int(roman_string):
             excep = False
             continue
         for j in range(len(roman_string)):
+            if i == len(roman_string) - 1:
+                out += map[roman_string[i]]  # standard case
+                return out    
             if i == j or i > j or j - i > 1:
                 continue
-            if i == len(roman_string):
-                out += map[roman_string[i]]  # standard case
             if (map[roman_string[i]] >= map[roman_string[j]]):
                 out += map[roman_string[i]]  # standard case
             elif map[roman_string[i]] < map[roman_string[j]]:
