@@ -15,30 +15,26 @@ def roman_to_int(roman_string):
             excep = False
             continue
         for j in range(len(roman_string)):
-            if i == j or i > j or j - i > 1 or excep:
+            if i == j or i > j or j - i > 1:
                 continue
-            if map[roman_string[i]] >= map[roman_string[j]] or i == len(roman_string):
+            if i == len(roman_string):
                 out += map[roman_string[i]]  # standard case
-                print(f"{map[roman_string[i]]} add std")
+            if (map[roman_string[i]] >= map[roman_string[j]]):
+                out += map[roman_string[i]]  # standard case
             elif map[roman_string[i]] < map[roman_string[j]]:
                 if roman_string[i] == "I" and roman_string[j] == "X":
                     out += 9  # exception IX
                     excep = True
-                    print(f"IX")
                 if roman_string[i] == "I" and roman_string[j] == "V":
                     out += 4  # exception IV
                     excep = True
-                    print(f"IV")
                 if roman_string[i] == "X" and roman_string[j] == "L":
                     out += 40  # exception XL
                     excep = True
-                    print(f"XL")
                 if roman_string[i] == "X" and roman_string[j] == "C":
                     out += 90  # exception XC
                     excep = True
-                    print(f"XC")
                 if roman_string[i] == "C" and roman_string[j] == "D":
                     out += 400  # exception CD
                     excep = True
-                    print(f"CD")
     return out
