@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+def roman_to_int(roman_string):
     out = 0
     for i in range(len(roman_string)):
         if roman_string[i] == "M" and roman_string[i-1] == "C":
