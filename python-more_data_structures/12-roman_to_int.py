@@ -28,7 +28,6 @@ def roman_to_int(roman_string):
         elif roman_string[i] == "V" and roman_string[i-1] == "I":
             out += 4
     for i in range(len(roman_string)):
-        if i > 0:
-            if (roman_string[-i] == "I" and roman_string[-i-1] != "X") or roman_string[-i] == "I" and roman_string[-i-1] != "V":
-                out += 1
+        if (roman_string[-i] == "I" and roman_string[-i-1] != "X") or roman_string[-i] == "I" and roman_string[-i-1] != "V":
+            out += 1
     return out
