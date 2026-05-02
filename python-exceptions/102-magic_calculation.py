@@ -4,10 +4,10 @@ def magic_calculation(a, b):
     for i in range(1, 4):
         try:
             if i > a:
-                raise ValueError("Too far")
+                raise Exception("Too far")
             else:
                 result += (a ** b) / i
-        except ValueError:
+        except Exception:
             continue
     result += a + b
     return result
