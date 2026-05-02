@@ -8,5 +8,5 @@ def magic_calculation(a, b):
             result += (a ** b) / i
         except Exception:
             continue
-    result =+ a + b
+    result += a + b
     return result
