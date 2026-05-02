@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 def safe_print_list(my_list=[], x=0):
-    out_1 = 0
+    out = 0
     if my_list == []:
-        print(0)
-        return out_1
+        print(out, end="")
     try:
         for x in range(x):
             print(my_list[x], end="")
-            out_1 = x+1
+            out += 1
     except:
-        return out_1
+        pass
     finally:
         print("")
-        return out_1
+        return out
