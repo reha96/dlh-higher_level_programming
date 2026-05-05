@@ -22,7 +22,8 @@ class Square:
         else:
             self.__size = size
 
-        if (type(position) is not tuple) or (position[0] < 0) or (position[1] < 0):
+        if ((type(position) is not tuple) or (position[0] < 0) or 
+            (position[1] < 0)):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = position
@@ -69,20 +70,3 @@ class Square:
             for j in range(self.size):
                 print("#", end="")
             print("")
-
-
-# position should be set using space - Don't fill lines by spaces when position[1] > 0
-my_square_1 = Square(3)
-my_square_1.my_print()
-
-print("--")
-
-my_square_2 = Square(3, (1, 1))
-my_square_2.my_print()
-
-print("--")
-
-my_square_3 = Square(3, (3, 0))
-my_square_3.my_print()
-
-print("--")
