@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """This module creates a class that defines a square without
 importing any modules."""
 
