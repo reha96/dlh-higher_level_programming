@@ -37,6 +37,8 @@ class Square:
 
     @position.setter
     def position(self, position):
+        """Public instance method def position(self, position) set the
+        current position."""
         if type(position) is not int:
             raise TypeError("size must be an integer")
         elif position < 0:
@@ -51,10 +53,14 @@ class Square:
 
     @property
     def size(self):
+        """Public instance def size(self) returns the
+        current size."""
         return self.__size
 
     @size.setter
     def size(self, size):
+        """Public instance def size(self, size) sets the
+        current size."""
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -63,6 +69,8 @@ class Square:
             self.__size = size
 
     def my_print(self):
+        """Public instance my_print(self) prints the
+        sized square."""
         if self.size == 0:
             print("")
         for i in range(self.size):
