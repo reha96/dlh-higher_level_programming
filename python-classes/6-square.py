@@ -37,14 +37,10 @@ class Square:
 
     @position.setter
     def position(self, position):
-        """Public instance method def position(self, position) set the
-        current position."""
-        if type(position) is not tuple:
+        if (not isinstance(position, tuple) or len(position) != 2 or
+                not all(isinstance(p, int) and p >= 0 for p in position)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif (position[0] < 0) or (position[1] < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.position = position
+        self.__position = position
 
     def area(self):
         """Public instance method def area(self) returns the
@@ -88,4 +84,4 @@ class Square:
         return "\n".join(lines)
 
     def my_print(self):
-        print(self)
+        print(self.__str__())
