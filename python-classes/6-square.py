@@ -39,12 +39,12 @@ class Square:
     def position(self, position):
         """Public instance method def position(self, position) set the
         current position."""
-        if type(position) is not int:
-            raise TypeError("size must be an integer")
-        elif position < 0:
-            raise ValueError("size must be >= 0")
+        if type(position) is not tuple:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif (position[0] < 0) or (position[1] < 0):
+            raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.__size = position
+            self.position = position
 
     def area(self):
         """Public instance method def area(self) returns the
@@ -68,14 +68,24 @@ class Square:
         else:
             self.__size = size
 
-    def my_print(self):
-        """Public instance my_print(self) prints the
-        sized square."""
+    def __str__(self):
+        # Use a list to collect all lines of the square representation
+        lines = []
+
+        # Append empty line when size is 0
         if self.size == 0:
-            print("")
+            return "\n"
+
+        # Add vertical spacing based on position[1]
+        for _ in range(self.position[1]):
+            lines.append("")
+
+        # Populate the square's representation with spaces followed by '#'
         for i in range(self.size):
-            for k in range(self.position[0]):
-                print("_", end="")
-            for j in range(self.size):
-                print("#", end="")
-            print("")
+            line = ' ' * self.position[0] + '#' * self.size
+            lines.append(line)
+
+        return "\n".join(lines)
+
+    def my_print(self):
+        print(self)
