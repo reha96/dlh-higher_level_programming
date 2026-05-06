@@ -66,24 +66,12 @@ class Square:
         else:
             self.__size = size
 
-    def __str__(self):
-        # Use a list to collect all lines of the square representation
-        lines = []
-
-        # Append empty line when size is 0
-        if self.size == 0:
-            return "\n"
-
-        # Add vertical spacing based on position[1]
-        for _ in range(self.position[1]):
-            lines.append("")
-
-        # Populate the square's representation with spaces followed by '#'
-        for i in range(self.size):
-            line = ' ' * self.position[0] + '#' * self.size
-            lines.append(line)
-
-        return "\n".join(lines)
-
     def my_print(self):
-        print(self.__str__())
+        if self.size == 0:
+            print("")
+        if self.position[1] > 0:
+            for i in range(self.position[1]):
+                print("")
+        for j in range(self.size):
+            print(" " * self.position[0], end="")
+            print("#" * self.size)
