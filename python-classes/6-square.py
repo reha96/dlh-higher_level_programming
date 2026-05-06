@@ -37,15 +37,17 @@ class Square:
 
     @position.setter
     def position(self, position):
-        if (not isinstance(position, tuple) or len(position) != 2 or
-                not all(isinstance(p, int) and p >= 0 for p in position)):
+        if (
+            not isinstance(position, tuple) or len(position) != 2
+            or not all(isinstance(p, int) and p >= 0 for p in position)
+        ):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
     def area(self):
         """Public instance method def area(self) returns the
         current square area."""
-        return self.__size**2
+        return self.__size ** 2
 
     @property
     def size(self):
@@ -57,7 +59,7 @@ class Square:
     def size(self, size):
         """Public instance def size(self, size) sets the
         current size."""
-        if type(size) is not int:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
