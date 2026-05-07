@@ -217,3 +217,18 @@ if my_rectangle_1 is Rectangle.bigger_or_equal(my_rectangle_1, my_rectangle_2):
     print("my_rectangle_1 is bigger or equal to my_rectangle_2")
 else:
     print("my_rectangle_2 is bigger than my_rectangle_1")
+
+
+"""tester T10"""
+os.system('clear')
+print("--"*10)
+print("tester T10")
+print("--"*5 + "pycode" + "--"*5)
+os.system("pycodestyle 9-rectangle.py")
+print("--"*5 + "pycode" + "--"*5)
+
+Rectangle = __import__('9-rectangle').Rectangle
+
+my_square = Rectangle.square(5)
+print("Area: {} - Perimeter: {}".format(my_square.area(), my_square.perimeter()))
+print(my_square)
