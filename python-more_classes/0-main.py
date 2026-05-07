@@ -88,3 +88,6 @@ try:
     print(repr(my_rectangle))
 except Exception as err:
     print("[{}] {}".format(err.__class__.__name__, err))
+
+my_rectangle = Rectangle(2, 4)
+print(str(my_rectangle))

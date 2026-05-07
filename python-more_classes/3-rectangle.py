@@ -71,4 +71,5 @@ class Rectangle:
             for j in range(self.__width):
                 out.append("#")
             out.append("\n")
-        return "".join(out)
+        out = "".join(out)
+        return out[:-1]
