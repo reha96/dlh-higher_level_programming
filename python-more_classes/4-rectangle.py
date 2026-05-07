@@ -73,3 +73,6 @@ class Rectangle:
             out.append("\n")
         out = "".join(out)
         return out[:-1]
+
+    def __repr__(self):
+        return f"Rectangle({self.__width}, {self.__height})"
