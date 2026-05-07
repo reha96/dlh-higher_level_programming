@@ -196,9 +196,9 @@ print("--")
 os.system('clear')
 print("--"*10)
 print("tester T9")
-print("--"*10)
+print("--"*5 + "pycode" + "--"*5)
 os.system("pycodestyle 8-rectangle.py")
-print("--"*10)
+print("--"*5 + "pycode" + "--"*5)
 
 Rectangle = __import__('8-rectangle').Rectangle
 
