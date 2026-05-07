@@ -7,7 +7,7 @@ class Rectangle:
 
     number_of_instances = 0
     print_symbol = "#"
-    
+
     def __init__(self, width=0, height=0):
         """Initialization of Square class
         with private width and height attributes"""
@@ -73,7 +73,7 @@ class Rectangle:
         out = []
         for i in range(self.__height):
             out.append("{}".format(self.print_symbol) * self.__width)
-            
+
             out.append("\n")
         out = "".join(out)
         return out[:-1]
