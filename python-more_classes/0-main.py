@@ -42,7 +42,7 @@ except Exception as err:
 print("--")
 print("tester T3")
 print("--")
-Rectangle = __import__('2-rectangle').Rectangle
+Rectangle = __import__("2-rectangle").Rectangle
 
 my_rectangle = Rectangle(2, 4)
 print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
@@ -58,7 +58,7 @@ print("--")
 print("tester T4")
 print("--")
 
-Rectangle = __import__('3-rectangle').Rectangle
+Rectangle = __import__("3-rectangle").Rectangle
 
 my_rectangle = Rectangle(2, 4)
 print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
@@ -97,7 +97,7 @@ print("--")
 print("tester T5")
 print("--")
 
-Rectangle = __import__('4-rectangle').Rectangle
+Rectangle = __import__("4-rectangle").Rectangle
 
 my_rectangle = Rectangle(2, 4)
 print(str(my_rectangle))
@@ -128,7 +128,7 @@ print("--")
 print("tester T6")
 print("--")
 
-Rectangle = __import__('5-rectangle').Rectangle
+Rectangle = __import__("5-rectangle").Rectangle
 
 my_rectangle = Rectangle(2, 4)
 print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
@@ -139,3 +139,18 @@ try:
     print(my_rectangle)
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
+
+"""tester T7"""
+print("--")
+print("tester T7")
+print("--")
+
+Rectangle = __import__("6-rectangle").Rectangle
+
+my_rectangle_1 = Rectangle(2, 4)
+my_rectangle_2 = Rectangle(2, 4)
+print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
+del my_rectangle_1
+print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
+del my_rectangle_2
+print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
