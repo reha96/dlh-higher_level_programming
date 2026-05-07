@@ -19,16 +19,16 @@ my_rectangle.width = 10
 my_rectangle.height = 3
 print(my_rectangle.__dict__)
 
-try:
-    my_rectangle.width = -2
-    my_rectangle.height = -1
-    print(my_rectangle.__dict__)
-except (IndexError, TypeError, ValueError) as err:
-    print(err)
+# try:
+#     my_rectangle.width = [{}]
+#     my_rectangle.height = -1
+#     print(my_rectangle.__dict__)
+# except Exception as err:
+#     print("[{}] {}".format(err.__class__.__name__, err))
 
 try:
-    my_rectangle.width = 12
-    my_rectangle.height = -2
+    my_rectangle.width = 2
+    my_rectangle.height = -3
     print(my_rectangle.__dict__)
-except (IndexError, TypeError, ValueError) as err:
-    print(err)
+except Exception as err:
+    print("[{}] {}".format(err.__class__.__name__, err))
