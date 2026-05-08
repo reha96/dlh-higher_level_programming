@@ -14,7 +14,7 @@ read_file = __import__('0-read_file').read_file
 try:
     read_file("tests/my_file_0.txt")
 except Exception as err:
-        print("[{}] {}".format(err.__class__.__name__, err))
+    print("[{}] {}".format(err.__class__.__name__, err))
 
 task += 1
 os.system('clear')
@@ -31,4 +31,4 @@ try:
         "my_first_file.txt", "This School is so cool!\n")
     print(nb_characters)
 except Exception as err:
-        print("[{}] {}".format(err.__class__.__name__, err))
+    print("[{}] {}".format(err.__class__.__name__, err))
