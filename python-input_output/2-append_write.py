@@ -17,7 +17,11 @@ def append_write(filename="", text=""):
         text (str, optional): _description_.
         Defaults to "".
     """
-    with open(filename, "a", encoding="utf-8") as file:
-        file.write(text)
+    with open(filename, "r", encoding="utf-8") as file:
+        if len(file.read()) > 0:
+            pass
+        else:
+            with open(filename, "a", encoding="utf-8") as file:
+                file.write(text)
     with open(filename, "r", encoding="utf-8") as file:
         return len(file.read())
