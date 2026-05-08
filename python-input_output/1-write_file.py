@@ -6,6 +6,7 @@ to stdout"""
 
 def write_file(filename="", text=""):
     try:
-        with open(filename)
-    except Exception:
-        
+        with open(filename, "a") as file:
+            file.write(text)
+    except Exception as err:
+        print("[{}] {}".format(err.__class__.__name__, err))
