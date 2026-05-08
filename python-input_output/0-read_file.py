@@ -9,6 +9,6 @@ def read_file(filename=""):
 
     try:
         with open(filename, "r") as file:
-            print(file.read())
+            print(file.read(), end="")
     except Exception as err:
         print(err)
