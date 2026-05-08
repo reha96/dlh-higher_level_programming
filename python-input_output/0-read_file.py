@@ -11,4 +11,4 @@ def read_file(filename=""):
         with open(filename, "r") as file:
             print(file.read(), end="")
     except Exception as err:
-        print(err)
+        print("[{}] {}".format(err.__class__.__name__, err))
