@@ -5,6 +5,9 @@ to stdout"""
 
 
 def write_file(filename="", text=""):
+    """a function that writes a
+    string to a text file (UTF8) and prints it
+    to stdout"""
     try:
         with open(filename, "a") as file:
             file.write(text)
