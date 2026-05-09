@@ -43,6 +43,6 @@ class Student:
             try:
                 for key in pop_keys:
                     out.pop(key)
-            except:
+            except Exception:
                 pass
             return out
