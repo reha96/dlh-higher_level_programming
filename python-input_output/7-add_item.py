@@ -18,7 +18,7 @@ def main(*argv):
     except FileNotFoundError:
         pass
 
-    elements.extend(argv)
+    elements.append(argv)
     save_to_json_file(elements, f)
 
 
