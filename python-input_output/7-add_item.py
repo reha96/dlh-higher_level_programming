@@ -16,8 +16,7 @@ def main(*argv):
         out = load_from_json_file(f)
     except FileNotFoundError:
         out = []
-    
-    out = load_from_json_file(f)
+
     out.append(argv)
     save_to_json_file(out, f)
 
