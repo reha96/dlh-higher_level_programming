@@ -207,3 +207,17 @@ except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
 
 os.system("rm my_dict.json my_list.json ")
+
+os.system("clear")
+print("--" * 10)
+print("tester 7-add_item.py")
+print("--" * 5 + "pycode" + "--" * 5)
+os.system("pycodestyle 7-add_item.py")
+print("--" * 5 + "pycode" + "--" * 5)
+
+os.system("python3 7-add_item.py")
+os.system("cat add_item.json ; echo " "")
+os.system("python3 7-add_item.py Best School")
+os.system("cat add_item.json ; echo " "")
+os.system("python3 7-add_item.py 89 Python C")
+os.system("cat add_item.json ; echo " "")
