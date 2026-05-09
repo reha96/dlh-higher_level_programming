@@ -12,12 +12,12 @@ load_from_json_file = __import__(
 
 def main(*argv):
     f = "add_item.json"
+    elements = []
     try:
-        save_to_json_file(load_from_json_file(f), f)
+        elements = load_from_json_file(f)
     except FileNotFoundError:
-        save_to_json_file(argv, f)
+        pass
 
-    elements = list(load_from_json_file(f))
     elements.extend(argv)
     save_to_json_file(elements, f)
 
