@@ -101,7 +101,8 @@ class SinglyLinkedList:
         while current is not None and new_node.data > current.data:
             prev = current
             current = current.next_node
-        prev.next_node = new_node
+        if prev is not None:
+            prev.next_node = new_node
         new_node.next_node = current
 
     def __str__(self):
