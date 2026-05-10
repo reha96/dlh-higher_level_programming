@@ -146,3 +146,62 @@ Deserialized Object:
 Name: John
 Age: 25
 Is Student: True
+
+
+2. Converting CSV Data to JSON Format
+
+The objective of this exercise is to gain experience in reading data from one format (CSV) and converting it into another format (JSON) using serialization techniques.
+Instructions:
+
+    Begin by importing the required modules:
+
+   import csv
+   import json
+
+    Define a function named convert_csv_to_json that takes the CSV filename as its parameter and writes the JSON data to data.json.
+
+    Inside this function:
+
+    Use Python's csv module to open the CSV file and read the data. Use the DictReader class to convert each row into a dictionary.
+    Serialize the list of dictionaries using the json module.
+    Write the serialized JSON data to data.json.
+
+    The function should return True if the conversion was successful.
+    Handle exceptions, such as file not found. Function should return False in this case.
+    Save your work in task_02_csv.py.
+
+Testing Your Code:
+
+#!/usr/bin/env python3
+from task_02_csv import convert_csv_to_json
+
+csv_file = "data.csv"
+convert_csv_to_json(csv_file)
+print(f"Data from {csv_file} has been converted to data.json")
+
+$ python3 main_02_csv.py 
+Data from data.csv has been converted to data.json
+
+CSV Dataset (data.csv) example:
+
+name,age,city
+John,28,New York
+Alice,24,Los Angeles
+Bob,22,Chicago
+Eve,30,San Francisco
+
+After the conversion, the resulting data.json file should contain:
+
+[
+    {"name": "John", "age": "28", "city": "New York"},
+    {"name": "Alice", "age": "24", "city": "Los Angeles"},
+    {"name": "Bob", "age": "22", "city": "Chicago"},
+    {"name": "Eve", "age": "30", "city": "San Francisco"}
+]
+
+Repo:
+
+    GitHub repository: dlh-higher_level_programming
+    Directory: python-serialization
+    File: task_02_csv.py
+
