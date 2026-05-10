@@ -25,11 +25,47 @@ class Square:
     def area(self):
         """Public instance method def area(self) returns the
         current square area."""
-        return self.__size ** 2
+        return self.__size**2
 
     @property
     def size(self):
         return self.__size
+
+    def __lt__(self, other):
+        if self.area() < other.area():
+            return True
+        else:
+            return False
+
+    def __le__(self, other):
+        if self.area() <= other.area():
+            return True
+        else:
+            return False
+
+    def __eq__(self, other):
+        if self.area() == other.area():
+            return True
+        else:
+            return False
+
+    def __ne__(self, other):
+        if self.area() <= other.area():
+            return True
+        else:
+            return False
+
+    def __gt__(self, other):
+        if self.area() > other.area():
+            return True
+        else:
+            return False
+
+    def __ge__(self, other):
+        if self.area() >= other.area():
+            return True
+        else:
+            return False
 
     @size.setter
     def size(self, size):
