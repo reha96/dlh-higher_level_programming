@@ -52,6 +52,15 @@ class CustomObject:
 
     @classmethod
     def deserialize(cls, filename):
+        """load and return an instance of the CustomObject
+        from the provided filename
+
+        Args:
+            filename (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         try:
             with open(filename, mode="rb") as file:
                 return pickle.load(file)
