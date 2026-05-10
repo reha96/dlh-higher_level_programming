@@ -45,34 +45,9 @@ def deserialize_from_xml(filename):
         result = {}
         # Iterate over each child element
         for child in root:
-            key = child.tag
-            value = child.text
-
-            # Convert text to appropriate Python type
-            if value is not None:
-                value = (
-                    value.strip()
-                )  # Remove leading/trailing whitespace
-                # Try integer
-                try:
-                    value = int(value)
-                except ValueError:
-                    # Try float
-                    try:
-                        value = float(value)
-                    except ValueError:
-                        # Try boolean (case-insensitive)
-                        if value.lower() == "true":
-                            value = True
-                        elif value.lower() == "false":
-                            value = False
-                        else:
-                            # Keep as string
-                            value = value
-            else:
-                value = ""  # or None, but empty string is common
-                # for empty elements
-            result[key] = value
+            result[child.tag] = (
+                child.text if child.text is not None else ""
+            )
         return result
     except Exception:
         return False
