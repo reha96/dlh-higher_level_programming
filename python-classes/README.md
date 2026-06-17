@@ -226,6 +226,61 @@ at head, middle, and end. Override `__str__` to traverse the list and return `"\
 
 ---
 
+### Task 8 — Square with Position (`101-square.py`)
+
+**Challenge:** Enhance the Square class with a `position` attribute — a tuple of two positive
+integers that controls where the square is printed on screen — introducing tuple validation
+and multi-property classes.
+
+**Approach:** Add a `position` property with getter and setter. The setter validates that
+`position` is a tuple of exactly 2 positive integers using `isinstance()`, `len()`, and
+`all()` with a generator. The `my_print()` method uses `position[1]` for vertical offset
+(number of blank lines) and `position[0]` for horizontal offset (spaces before `#`).
+Overload `__str__` to produce the same visual output as a string.
+
+**New techniques introduced:**
+
+| Technique | Purpose |
+|-----------|---------|
+| Tuple validation with `isinstance()`, `len()`, `all()` | Validate compound position data in one check |
+| `position[1]` vertical offset | Print blank lines before the square |
+| `position[0]` horizontal padding | `" " * pos[0]` shifts each row right |
+| `__str__` for visual output | Return the same printed representation as a string |
+
+> **Key takeaway:** The `position` tuple encapsulates 2D spatial information. Tuple
+> validation ensures both dimensions are valid positive integers. `__str__` and `my_print()`
+> produce identical visuals — one as a return value, the other as side-effect output.
+
+---
+
+### Task 9 — Square Comparison Operators (`102-square.py`)
+
+**Challenge:** Make Square instances comparable by area using Python's rich comparison
+operators — introducing the full set of dunder comparison methods.
+
+**Approach:** Implement all six comparison dunders: `__lt__` (<), `__le__` (<=), `__eq__` (==),
+`__ne__` (!=), `__gt__` (>), `__ge__` (>=). Each compares `self.area()` against `other.area()`.
+Only define `size` (no position needed here), focusing purely on comparison semantics.
+
+**New techniques introduced:**
+
+| Technique | Purpose |
+|-----------|---------|
+| `__lt__(self, other)` | Less-than comparison — `square1 < square2` |
+| `__le__(self, other)` | Less-than-or-equal — `square1 <= square2` |
+| `__eq__(self, other)` | Equality — `square1 == square2` |
+| `__ne__(self, other)` | Not-equal — `square1 != square2` |
+| `__gt__(self, other)` | Greater-than — `square1 > square2` |
+| `__ge__(self, other)` | Greater-than-or-equal — `square1 >= square2` |
+| Comparison by computed property | Compare `self.area()` methods, not raw attributes |
+
+> **Key takeaway:** Python's rich comparison dunders (`__lt__`, `__eq__`, etc.) let your
+> objects work with `==`, `<`, `>`, and sorting. Define all six for consistency — Python
+> can infer some from others, but explicit is better. Comparing by area rather than size
+> demonstrates indirection: equality is based on a computed value.
+
+---
+
 ## Technique Inventory
 
 | Task | New technique summarized | Category |
@@ -238,6 +293,8 @@ at head, middle, and end. Override `__str__` to traverse the list and return `"\
 | 5 | Nested loops for 2D output, `end=""` printing, edge case handling | OOP Methods |
 | 6 | `isinstance()`, `all()` generator, `len()` for tuple, `" " * n` offset | Validation & Data |
 | 7 | Node class, linked list traversal, `sorted_insert`, `__str__`, `"\n".join()` | Data Structures |
+| 8 | Tuple position, vertical/horizontal offset, `__str__` for visual output | OOP & Position |
+| 9 | Rich comparison dunders (`__lt__`–`__ge__`), compare by `area()` | OOP & Comparison |
 
 ---
 
@@ -247,4 +304,5 @@ at head, middle, and end. Override `__str__` to traverse the list and return `"\
 - [Built-in Functions — `isinstance()`, `all()`](https://docs.python.org/3/library/functions.html)
 - [The `@property` decorator](https://docs.python.org/3/library/functions.html#property)
 - [Private Variables — Python Docs](https://docs.python.org/3/tutorial/classes.html#private-variables)
+- [Rich Comparison Methods — Python Data Model](https://docs.python.org/3/reference/datamodel.html#object.__lt__)
 - [Data model — `__str__` and `__init__`](https://docs.python.org/3/reference/datamodel.html)
