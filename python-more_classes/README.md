@@ -248,6 +248,34 @@ with equal width and height. Called as `Rectangle.square(5)`.
 
 ---
 
+### Task 10 — Blog: Class and Instance Attributes
+
+**Challenge:** Articulate the full mental model of class vs. instance attributes — including
+creation, differences, `__dict__` mechanics, and Pythonic best practices — in a published
+blog post with examples and a diagram.
+
+**Approach:** Write a comprehensive post covering: class attributes (defined in the class
+body, shared across all instances), instance attributes (bound to `self` in `__init__`,
+unique per object), the Pythonic way using `__init__` and class-level constants, the
+`__dict__` attribute as the storage mechanism, and Python's MRO-based lookup fallback
+from instance to class. Include code examples and an explanatory diagram.
+
+**New techniques introduced:**
+
+| Technique | Purpose |
+|-----------|---------|
+| Class attribute definition in class body | Shared mutable/non-mutable state across all instances |
+| Instance attribute via `self.attr` in `__init__` | Per-object state, unique to each instance |
+| `obj.__dict__` and `ClassName.__dict__` | Inspect the attribute storage dictionary for instances and classes |
+| Python attribute lookup: instance → class → base classes | Understand the MRO-based fallback chain |
+
+> **Key takeaway:** Class attributes are shared; instance attributes are unique. Python stores
+> both in `__dict__` dictionaries and looks up attributes via instance-first MRO fallback.
+> The Pythonic way: define class-level defaults/constants in the class body, instance-specific
+> state in `__init__` via `self`.
+
+---
+
 ## Technique Inventory
 
 | Task | New technique summarized | Category |
@@ -262,6 +290,7 @@ with equal width and height. Called as `Rectangle.square(5)`.
 | 7 | Configurable class variable, `self.var` fallback, `"{}".format()` repetition | Class Attributes |
 | 8 | `@staticmethod`, no `self`/`cls`, `isinstance` parameter validation | Static Methods |
 | 9 | `@classmethod`, `cls` parameter, factory method pattern | Class Methods |
+| 10 | Class vs. instance attributes, `__dict__` mechanics, MRO lookup fallback | Attributes & Internals |
 
 ---
 
@@ -272,3 +301,5 @@ with equal width and height. Called as `Rectangle.square(5)`.
 - [Class and Static Methods — Real Python](https://realpython.com/instance-class-and-static-methods-demystified/)
 - [Python Class Attributes — Overview](https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables)
 - [Factory Method Pattern — Python](https://realpython.com/factory-method-python/)
+- [Python `__dict__` and Attribute Lookup](https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy)
+- [Class and Instance Attributes — Real Python](https://realpython.com/python3-object-oriented-programming/#class-and-instance-attributes)
